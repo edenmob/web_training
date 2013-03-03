@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre de ma page HTML5</title>
+  <meta name="description" content="Mon super site HTML5">
+  <meta name="author" content="Moi">
+  <style>
+  .a { color: blue; }
+  .b { color: purple; }
+  .box { border: 1px solid red;}
+  </style>
+</head>
+<body>
+<h1>Insertion automatique d'icones PDF pour des liens correspondants</h1>
+<ul class="navlist" id="navlinks">
+  <li><a href="someurl.html">Link #1</a></li>
+  <li><a name="#anchor1">Named Anchor Link</a></li>
+  <li><a href="someurl.html">Link #2</a></li>
+  <li><a href="someurl.pdf">Link #3</a></li>
+  <li><a href="someurl.html">Link #4</a></li>
+  <li><a href="someurl.html">Link #5</a></li>
+  <li><a href="someurl.pdf">Link #6</a></li>
+  <li><a href="someurl.html">Link #7</a></li>
+  <li><a href="mailto:joe@joe.com">Email Link</a></li>
+</ul>
+
+  <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+  <script src="../../../a-common/js/jquery-1.9.1.min.js"></script>
+  <script>
+
+  $(document).ready(function(){
+
+    $("document").ready(function() {
+      // Insérer une image (images/small_pdf_icon.gif) après chaque lien a (d'un li) pointant vers un fichier PDF 
+    });
+  })
+
+  </script>
+</body>
+</html>

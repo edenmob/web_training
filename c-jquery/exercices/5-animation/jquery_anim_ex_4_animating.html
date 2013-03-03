@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre de ma page HTML5</title>
+  <meta name="description" content="Mon super site HTML5">
+  <meta name="author" content="Moi">
+  <style>
+  div#monDiv {
+    position:relative;
+    width: 250px;
+    height: 180px;
+    margin: 10px;
+    padding: 20px;
+    background: cyan;
+    border: 2px solid black;
+    cursor: pointer;
+  }
+  p, span {
+    font-size: 16pt;
+  }
+  button {
+    margin: 5px;
+  }
+  </style>
+</head>
+<body>
+  <p>
+    Animating an Element</p>
+    <div id="monDiv">Animate Me</div>
+    <button id="right">Grow Right</button>
+    <button id="text">Big Text</button>
+    <button id="toggle">Move Div</button>
+
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+    <script src="../../../a-common/js/jquery-1.9.1.min.js"></script>
+    <script>
+
+    // Associer chacun des boutons à l'évènement correspondant
+
+    $(document).ready(function(){
+
+      // Utiliser la méthode animate pour :
+      // 1. Aggrandir la taille de #monDiv à 600px (vers la droite), décaler de 50px vers la droite et vers le bas de 100px
+      // 2. Aggrandir la police de #monDiv à 24px
+      // 3. déplacer vers la droite en swing et linear
+
+
+    })
+
+    </script>
+  </body>
+  </html>

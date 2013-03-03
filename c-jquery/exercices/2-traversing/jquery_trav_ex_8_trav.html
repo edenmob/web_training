@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre de ma page HTML5</title>
+  <meta name="description" content="Mon super site HTML5">
+  <meta name="author" content="Moi">
+  <style>
+  .a { color: blue; }
+  .b { color: purple; }
+  .box { border: 1px solid red;}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Bienvenue </h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.
+    </p>
+
+    <div class="box clos">
+      <ul class="maClasse box">
+        <li>item</li>
+        <li>item 2</li>
+        <li>item 2</li>
+        <li>item 4</li>
+        <li>item 5</li>
+        <li>
+          <ul class="clos">
+            <li class="imb">salut je suis imbriqu&eacute;.</li>
+            </ul
+
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+    <script src="../../../a-common/js/jquery-1.9.1.min.js"></script>
+    <script>
+
+    $(document).ready(function(){
+
+      // Selectionnez (traversing) tous les enfants li de l'ul de classe maClasse
+
+     // Filtrer pour ne garder que l'élément à l'index 2
+
+      // A partir de cet élément, navguer à l'élément précédent et suivant
+
+     // Selectionnez le parent direct de classe box d'un ul
+
+     // Selectionnez tous les parents de classe box d'un ul
+
+     // Selectionnez l'élement de classe clos le plus proche des li de classe imb
+   })
+
+    </script>
+  </body>
+  </html>

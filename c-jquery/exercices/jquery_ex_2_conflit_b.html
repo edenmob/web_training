@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre de ma page HTML5</title>
+  <meta name="description" content="Mon super site HTML5">
+  <meta name="author" content="Moi">
+  <style>
+  </style>
+</head>
+<body>
+  <div id="main"></div>
+  <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+  <!-- Plusieurs solutions
+    A : Mettre jQuery en mode noConflict si chargé en dernier
+    B : Charger jQuery en premier
+  -->
+
+  <script src="../../a-common/js/prototype.js"></script>
+  <script src="../../a-common/js/jquery-1.9.1.min.js"></script>
+  <script>
+  jQuery.noConflict();
+  jQuery(document).ready(function($){
+      // You can use the locally-scoped $ in here as an alias to jQuery
+      var div = $('main');
+    });
+
+    // The $ variable in the global scope has the prototype.js meaning
+    window.onload = function(){
+      var div = $('main');
+    }
+
+    </script>
+  </body>
+  </html>

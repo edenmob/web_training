@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre de ma page HTML5</title>
+  <meta name="description" content="Mon super site HTML5">
+  <meta name="author" content="Moi">
+  <style>
+  div#monDiv {
+    width: 250px;
+    height: 180px;
+    margin: 10px;
+    padding: 20px;
+    background: blue;
+    border: 2px solid black;
+    cursor: pointer;
+  }
+  p, span {
+    font-size: 16pt;
+  }
+  button {
+    margin: 5px;
+  }
+  </style>
+</head>
+<body>
+  <p>
+    Show/hide/toggle</p>
+    <div id="monDiv">
+    </div>
+    <button id="show">Show</button>
+    <button id="hide">Hide</button>
+    <button id="toggle">Toggle</button>
+
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+    <script src="../../../a-common/js/jquery-1.9.1.min.js"></script>
+    <script>
+
+    $(document).ready(function(){
+
+      // Rendre monDiv visible lors du click sur le bouton #show
+      // Rendre monDiv invisible lors du click sur le bouton #hide (en 3 secondes)
+      // Cacher/afficher en fonction de l'état lors du click sur #toggle
+      // Modifier les options de vitesse pour constater la différence
+
+    })
+
+    </script>
+  </body>
+  </html>

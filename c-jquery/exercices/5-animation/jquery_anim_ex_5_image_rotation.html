@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre de ma page HTML5</title>
+  <meta name="description" content="Mon super site HTML5">
+  <meta name="author" content="Moi">
+  <style>
+  <style type="text/css">
+  #photoShow {
+    height:400px;
+    width:400px;
+  }
+  #photoShow div {
+    /* indispensable pour que le z-index fonctionne */
+    position:absolute;
+    z-index: 0;
+  }
+  #photoShow div.previous {
+    z-index: 1;
+  }
+  #photoShow div.current {
+    /* z-index le plus fort pour qu'elle soit visible */
+    z-index: 2;
+  }
+
+  </style>
+</head>
+<body>
+  <body>
+    <h1>
+      Rotation d'images facile avec jQuery</h1>
+      <div id="photoShow">
+        <div class="current">
+          <img src="images/Grass.jpg" alt="Photo Gallery" width="400" height="400" class="gallery" />
+        </div>
+        <div>
+          <img src="images/Leaf.jpg" alt="Photo Gallery" width="400" height="400" class="gallery" />
+        </div>
+        <div>
+          <img src="images/Spring.jpg" alt="Photo Gallery" width="400" height="400" class="gallery" />
+        </div>
+        <div>
+          <img src="images/Water.jpg" alt="Photo Gallery" width="400" height="400" class="gallery" />
+        </div>
+      </div>
+    </body>
+
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+    <script src="../../../a-common/js/jquery-1.9.1.min.js"></script>
+    <script>
+      // TODO : Implémenter cette fonction
+      function rotate() {
+
+      }
+
+
+      function run(){
+          setInterval(rotate, 3000);
+      }
+
+        run();
+
+
+        </script>
+      </body>
+      </html>
