@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre de ma page HTML5</title>
+  <meta name="description" content="Mon super site HTML5">
+  <meta name="author" content="Moi">
+  <style>
+  .normal {
+    width:300px;
+    height:200px;
+    background-color:Yellow;
+    font-size:18pt;
+  }
+
+  .highlighted {
+    background-color:Red;
+  }
+  </style>
+</head>
+<body>
+
+  <h1>A propos des Event Helpers</h1>
+  <div id="evtTarget" class="normal">Passez dessus pour voir l'effet. Cliquez pour changer le contenu.</div>
+
+  <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+  <script src="../../../a-common/js/jquery-1.9.1.min.js"></script>
+  <script>
+
+  $(document).ready(function(){
+
+    // Activer/désactiver la classe highlighted lors de mouseenter et mouseleave
+    $("#evtTarget").mouseenter(highlight).mouseleave(highlight);
+    
+    function highlight(event) {
+      $("#evtTarget").toggleClass("highlighted");
+    }
+    
+    
+  })
+
+  </script>
+</body>
+</html>

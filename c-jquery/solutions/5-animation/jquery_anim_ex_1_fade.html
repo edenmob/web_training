@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre de ma page HTML5</title>
+  <meta name="description" content="Mon super site HTML5">
+  <meta name="author" content="Moi">
+  <style>
+  div#monDiv {
+    width: 250px;
+    height: 180px;
+    margin: 10px;
+    padding: 20px;
+    background: blue; 
+    border: 2px solid black;
+    cursor: pointer;
+  }
+  p, span {
+    font-size: 16pt;
+  }
+  button {
+    margin: 5px;
+  }
+  </style>
+</head>
+<body>
+  <p>
+    Fading </p>
+    <div id="monDiv">
+    </div>
+    <button id="fadein">Fade In</button>
+    <button id="fadeout">Fade Out</button>
+    <button id="fadeto3">Fade To .3</button>
+    <button id="fadeup">Fade To 1.0</button>
+
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+    <script src="../../../a-common/js/jquery-1.9.1.min.js"></script>
+    <script>
+
+    $(document).ready(function(){
+
+      // Appliquer un fadein de monDiv en vitesse normal lors du click sur #fadein
+      // Appliquer un fadeout de monDiv en vitesse normal lors du click sur #fadeout
+      // Appliquer un fadeto de monDiv en vitesse slow et en opacité 0.3 lors du click sur #fadeto3
+      // Appliquer un fadeto de monDiv en vitesse rapide et en opacité 1 lors du click sur #fadeup
+
+      $("#fadein").click(function() {
+        $("#monDiv").fadeIn("normal");
+      });
+      $("#fadeout").click(function() {
+        $("#monDiv").fadeOut("normal");
+      });
+      $("#fadeto3").click(function() {
+        $("#monDiv").fadeTo("slow", 0.3);
+      });
+      $("#fadeup").click(function() {
+        $("#monDiv").fadeTo("fast", 1.0);
+      });
+
+    })
+
+    </script>
+  </body>
+  </html>

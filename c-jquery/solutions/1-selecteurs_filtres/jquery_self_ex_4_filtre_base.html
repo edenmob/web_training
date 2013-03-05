@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre de ma page HTML5</title>
+  <meta name="description" content="Mon super site HTML5">
+  <meta name="author" content="Moi">
+  <style>
+  .a { color: blue; }
+  .b { color: purple; }
+  .c { border: 1px solid red;}
+  </style>
+</head>
+<body>
+  <ul id="list1">
+    <li class="a">item 1</li>
+    <li class="a">item 2</li>
+    <li class="b">item 3</li>
+    <li class="b">item 4</li>
+  </ul>
+  <p class="a">This is paragraph 1</p>
+  <p id="para2">This is paragraph 2</p>
+  <p class="b">This is paragraph 3</p>
+  <p id="para4" lang="en-us">This is paragraph 4</p>
+
+  <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+  <script src="../../../a-common/js/jquery-1.9.1.min.js"></script>
+  <script>
+
+  $(document).ready(function(){
+    // Le premier p
+    $("p:first").addClass('c');
+    // Le dernier p
+    $("p:last").addClass('c');
+    // Les p paires (0, 2, 4 ...)
+    $("p:even").addClass('c');
+    // Les p impaires
+    $("p:odd").addClass('c');
+    // Le premier élément de classe a
+    $(".a:first").addClass('c');
+    // Les éléments paires de classe b
+    $(".b:even").addClass('c');
+    // Les p à un index plus grand que 1
+    $("p:gt(1)").addClass('c');
+    // Les p non égals au p d'index 2
+    $("p:not(p:eq(2))").addClass('c');
+  })
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre de ma page HTML5</title>
+  <meta name="description" content="Mon super site HTML5">
+  <meta name="author" content="Moi">
+  <style>
+  <style type="text/css">
+  #photoShow {
+    height:400px;
+    width:400px;
+  }
+  #photoShow div {
+    /* indispensable pour que le z-index fonctionne */
+    position:absolute;
+    z-index: 0;
+  }
+  #photoShow div.previous {
+    z-index: 1;
+  }
+  #photoShow div.current {
+    /* z-index le plus fort pour qu'elle soit visible*/
+    z-index: 2;
+  }
+
+  </style>
+</head>
+<body>
+  <body>
+    <h1>
+      Rotation d'images facile avec jQuery</h1>
+      <div id="photoShow">
+        <div class="current">
+          <img src="images/Grass.jpg" alt="Photo Gallery" width="400" height="400" class="gallery" />
+        </div>
+        <div>
+          <img src="images/Leaf.jpg" alt="Photo Gallery" width="400" height="400" class="gallery" />
+        </div>
+        <div>
+          <img src="images/Spring.jpg" alt="Photo Gallery" width="400" height="400" class="gallery" />
+        </div>
+        <div>
+          <img src="images/Water.jpg" alt="Photo Gallery" width="400" height="400" class="gallery" />
+        </div>
+      </div>
+    </body>
+
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+    <script src="../../../a-common/js/jquery-1.9.1.min.js"></script>
+    <script>
+      // Créer une fonction rotate qui effectue la rotation
+      // Appeler rotate toute les 2 secondes
+      function rotate() {
+          // On récupère la photo courante
+          var currentPhoto = $('#photoShow div.current');
+          // On récupère la photo suivante (si elle existe)
+          var nextPhoto = currentPhoto.next();
+          if(nextPhoto.length === 0)
+          {
+            // si pas de suivante (on est à la fin), on reprend la première
+            nextPhoto = $('#photoShow').find('div').first();
+            // plus performant que $('#photoShow div:first');
+          }
+
+          // On passe la photo courante en photo précédente (pour qu'elle soit visible pendant l'animation)
+          currentPhoto.removeClass('current').addClass('previous');
+
+          // Après l'animation, on 'retire' la photo précédente
+          var completeAnimnationFunc = function (){currentPhoto.removeClass('previous')};
+          // On anime (fade) l'affichage de la nouvelle photo
+          nextPhoto.css({opacity: 0.0}).addClass('current').fadeTo(1500.0, 1.0,completeAnimnationFunc);
+        }
+
+
+        function run(){
+            // Créer la fonction rotate qui va switcher en les images
+            setInterval(rotate, 3000);
+          }
+
+          run();
+
+
+          </script>
+        </body>
+        </html>

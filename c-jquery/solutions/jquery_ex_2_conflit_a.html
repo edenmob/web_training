@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre de ma page HTML5</title>
+  <meta name="description" content="Mon super site HTML5">
+  <meta name="author" content="Moi">
+  <style>
+  </style>
+</head>
+<body>
+  <div id="main"></div>
+  <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+  <!-- Plusieurs solutions
+    A : Mettre jQuery en mode noConflict si chargé en dernier
+    B : Charger jQuery en premier
+  -->
+
+  <script src="../../a-common/js/prototype.js"></script>
+  <script src="../../a-common/js/jquery-1.9.1.min.js"></script>
+  <script>
+    // $j is now an alias to the jQuery function;
+    // creating the new alias is optional
+    var $j = jQuery.noConflict();
+    $j(document).ready(function(){
+      var div = $j('main');
+    });
+
+    // The $ variable now has the prototype meaning,
+    // which is a shortcut for document.getElementById.
+    // mainDiv below is a DOM element, not a jQuery object
+    window.onload = function(){
+      var div = $('main');
+    }
+
+    </script>
+  </body>
+  </html>
