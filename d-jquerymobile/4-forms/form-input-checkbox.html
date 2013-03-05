@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery Mobile: Checkboxes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+</head> 
+<body>
+
+  <div data-role="page">
+
+    <div data-role="header">
+      <h1>My Form</h1>
+    </div>
+
+    <div data-role="content">
+
+      <form action="index.html" method="post">
+
+        <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup">
+            <legend>Widget Options:</legend>
+
+            <input type="checkbox" name="widgetOptions" id="widgetOptions-shiny" value="shiny">
+            <label for="widgetOptions-shiny">Shiny</label>
+
+            <input type="checkbox" name="widgetOptions" id="widgetOptions-wifi" value="wifi">
+            <label for="widgetOptions-wifi">WiFi</label>
+
+            <input type="checkbox" name="widgetOptions" id="widgetOptions-case" value="case">
+            <label for="widgetOptions-case">Case</label>
+
+          </fieldset>
+        </div>
+
+        <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup" data-type="horizontal">
+            <legend>Widget Options:</legend>
+
+            <input type="checkbox" name="widgetOptions" id="widgetOptions-shiny" value="shiny">
+            <label for="widgetOptions-shiny">Shiny</label>
+
+            <input type="checkbox" name="widgetOptions" id="widgetOptions-wifi" value="wifi">
+            <label for="widgetOptions-wifi">WiFi</label>
+
+            <input type="checkbox" name="widgetOptions" id="widgetOptions-case" value="case">
+            <label for="widgetOptions-case">Case</label>
+
+          </fieldset>
+        </div>
+
+        <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup">
+            <legend>Turbo Mode:</legend>
+                
+            <input type="checkbox" name="turboMode" id="turboMode-on" value="on">
+            <label for="turboMode-on">On</label>
+
+          </fieldset>
+        </div>
+
+      </form>
+    </div>
+
+    <div data-role="footer">
+      <h4>Page Footer</h4>
+    </div>
+
+  </div>
+
+</body>
+</html>
+
+

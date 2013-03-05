@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery Mobile: Listviews with Search Filtering</title> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+  <script>
+
+  $(document).on( 'pageinit', '#listViewDemos', function() {
+    // Callback sur la recherche (filtre de recherche)
+    $('#customAlgorithm').listview( 'option', 'filterCallback', filterFromStart );
+    // 
+    $('#dynamicList').on( 'listviewbeforefilter', populateList );
+  } );
+
+  /*The function to determine which rows to hide when the search filter textbox changes. The function accepts two arguments -- the text of the list item (or data-filtertext value if present), and the search string. Return true to hide the item, false to leave it visible.*/
+  function filterFromStart( itemText, searchString, item ) {
+    var display = (itemText.toString().toLowerCase().indexOf( searchString ) !== 0);
+    console.log('itemText = '+itemText+' display = '+display);
+    return display;
+  }
+
+  function populateList( evt, el ) {
+    var colors = [ "Red", "Green", "Blue", "Cream" ];
+    var searchText = el.input.value;
+    $('#dynamicList').children().remove();
+    if ( searchText.length == 0 ) return;
+
+    for ( var i=0; i<colors.length; i++ ) {
+      if ( colors[i].toLowerCase().indexOf( el.input.value.toString().toLowerCase() ) !== -1 ) {
+        $('#dynamicList').append( '<li><a href="#">' + colors[i] + '</a></li>' );
+      }
+    }
+
+    $('#dynamicList').listview( 'refresh' );
+  }
+
+  </script>
+
+  <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+</head> 
+<body>
+
+  <div data-role="page" id="listViewDemos">
+
+    <div data-role="header">
+      <h1>My Page</h1>
+    </div>
+
+    <div data-role="content">
+
+      <h2>A Listview with Search Filter</h2>
+
+      <ul data-role="listview" data-inset="true" data-filter="true">
+        <li><a href="#">Ruby Red</a></li>
+        <li><a href="#">Plush Purple</a></li>
+        <li><a href="#">Cool Cream</a></li>
+        <li><a href="#">Lovely Lilac</a></li>
+        <li><a href="#">Bold Black</a></li>
+        <li><a href="#">Glorious Green</a></li>
+        <li><a href="#">Passionate Pink</a></li>
+        <li><a href="#">Majestic Mauve</a></li>
+        <li><a href="#">Wistful White</a></li>
+        <li><a href="#">Outstanding Orange</a></li>
+        <li><a href="#">Titillating Turquoise</a></li>
+        <li><a href="#">Inspiring Indigo</a></li>
+      </ul>
+
+      <h2>Custom Filter Algorithm</h2>
+
+      <ul data-role="listview" data-inset="true" data-filter="true" id="customAlgorithm">
+        <li><a href="#">Red</a></li>
+        <li><a href="#">Green</a></li>
+        <li><a href="#">Blue</a></li>
+        <li><a href="#">Cream</a></li>
+      </ul>
+
+      <h2>Custom Item Filter Text</h2>
+
+      <ul data-role="listview" data-inset="true" data-filter="true">
+        <li data-filtertext="AL Alabama"><a href="#">Alabama</a></li>
+        <li data-filtertext="AK Alaska"><a href="#">Alaska</a></li>
+        <li data-filtertext="AZ Arizona"><a href="#">Arizona</a></li>
+        <li data-filtertext="AR Arkansas"><a href="#">Arkansas</a></li>
+      </ul>
+
+      <h2>Dynamically-Generated List</h2>
+
+      <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search colors..." id="dynamicList">
+      </ul>
+
+
+    </div>
+
+    <div data-role="footer">
+      <h4>Page Footer</h4>
+    </div>
+
+  </div>
+
+</body>
+</html>
+
+

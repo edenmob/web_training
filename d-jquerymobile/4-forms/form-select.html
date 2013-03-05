@@ -1,0 +1,244 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery Mobile: Select Menus</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+</head> 
+<body>
+
+  <div data-role="page">
+
+    <div data-role="header">
+      <h1>My Form</h1>
+    </div>
+
+    <div data-role="content">
+
+      <form action="index.html" method="post" style="padding: 100px 0;">
+
+        <h2>A Simple Select Menu:</h2>
+
+        <div data-role="fieldcontain">
+          <label for="simpleSelect">Widget Color:</label>
+          <select name="simpleSelect" id="simpleSelect">
+            <option value="rubyRed">Ruby Red</option>
+            <option value="plushPurple">Plush Purple</option>
+            <option value="coolCream">Cool Cream</option>
+            <option value="lovelyLilac">Lovely Lilac</option>
+          </select>
+        </div>
+
+        <h2>A Vertical Select Menu Group:</h2>
+
+        <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup">
+            <legend>Expiration Date:</legend>
+          
+            <label for="verticalGroupExpMonth">Month:</label>
+            <select name="verticalGroupExpMonth" id="verticalGroupExpMonth">
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+          
+            <label for="verticalGroupExpYear">Year:</label>
+            <select name="verticalGroupExpYear" id="verticalGroupExpYear">
+              <option value="2012">2012</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+            </select>
+
+          </fieldset>
+        </div>
+
+        <h2>A Horizontal Select Menu Group:</h2>
+
+        <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup" data-type="horizontal">
+            <legend>Expiration Date:</legend>
+          
+            <label for="horizontalGroupExpMonth">Month:</label>
+            <select name="horizontalGroupExpMonth" id="horizontalGroupExpMonth">
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+          
+            <label for="horizontalGroupExpYear">Year:</label>
+            <select name="horizontalGroupExpYear" id="horizontalGroupExpYear">
+              <option value="2012">2012</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+            </select>
+
+          </fieldset>
+        </div>
+
+
+        <h2>A Custom Select Menu:</h2>
+
+        <div data-role="fieldcontain">
+          <label for="customSelect">Widget Color:</label>
+          <select name="customSelect" id="customSelect" data-native-menu="false">
+            <option value="rubyRed">Ruby Red</option>
+            <option value="plushPurple">Plush Purple</option>
+            <option value="coolCream">Cool Cream</option>
+            <option value="lovelyLilac">Lovely Lilac</option>
+          </select>
+        </div>
+
+        <h2>A Custom Select with Lots of Options:</h2>
+
+        <div data-role="fieldcontain">
+          <label for="manyOptions">Widget Color:</label>
+          <select name="manyOptions" id="manyOptions" data-native-menu="false">
+            <option value="rubyRed">Ruby Red</option>
+            <option value="plushPurple">Plush Purple</option>
+            <option value="coolCream">Cool Cream</option>
+            <option value="lovelyLilac">Lovely Lilac</option>
+            <option value="boldBlack">Bold Black</option>
+            <option value="gloriousGreen">Glorious Green</option>
+            <option value="passionatePink">Passionate Pink</option>
+            <option value="majesticMauve">Majestic Mauve</option>
+            <option value="wistfulWhite">Wistful White</option>
+            <option value="outstandingOrange">Outstanding Orange</option>
+            <option value="titillatingTurquoise">Titillating Turquoise</option>
+            <option value="inspiringIndigo">Inspiring Indigo</option>
+          </select>
+        </div>
+
+
+        <h2>Disabling Options:</h2>
+
+        <div data-role="fieldcontain">
+          <label for="disablingOptions">Widget Color:</label>
+          <select name="disablingOptions" id="disablingOptions" data-native-menu="false">
+            <option value="rubyRed">Ruby Red</option>
+            <option value="plushPurple">Plush Purple</option>
+            <option value="coolCream">Cool Cream</option>
+            <option value="lovelyLilac" disabled>Lovely Lilac (unavailable)</option>
+          </select>
+        </div>
+
+
+        <h2>Placeholder (empty value attribute):</h2>
+
+        <div data-role="fieldcontain">
+          <label for="placeholder1">Widget Color:</label>
+          <select name="placeholder1" id="placeholder1" data-native-menu="false">
+            <option value="">Choose...</option>
+            <option value="rubyRed">Ruby Red</option>
+            <option value="plushPurple">Plush Purple</option>
+            <option value="coolCream">Cool Cream</option>
+            <option value="lovelyLilac">Lovely Lilac</option>
+          </select>
+        </div>
+
+        <h2>Placeholder (no value attribute):</h2>
+
+        <div data-role="fieldcontain">
+          <label for="placeholder2">Widget Color:</label>
+          <select name="placeholder2" id="placeholder2" data-native-menu="false">
+            <option>Choose...</option>
+            <option value="rubyRed">Ruby Red</option>
+            <option value="plushPurple">Plush Purple</option>
+            <option value="coolCream">Cool Cream</option>
+            <option value="lovelyLilac">Lovely Lilac</option>
+          </select>
+        </div>
+
+        <h2>Placeholder (no text node):</h2>
+
+        <div data-role="fieldcontain">
+          <label for="placeholder3">Widget Color:</label>
+          <select name="placeholder3" id="placeholder3" data-native-menu="false">
+            <option value="empty"></option>
+            <option value="rubyRed">Ruby Red</option>
+            <option value="plushPurple">Plush Purple</option>
+            <option value="coolCream">Cool Cream</option>
+            <option value="lovelyLilac">Lovely Lilac</option>
+          </select>
+        </div>
+
+        <h2>Placeholder (data-placeholder="true"):</h2>
+
+        <div data-role="fieldcontain">
+          <label for="placeholder4">Widget Color:</label>
+          <select name="placeholder4" id="placeholder4" data-native-menu="false">
+            <option value="empty" data-placeholder="true">Choose...</option>
+            <option value="rubyRed">Ruby Red</option>
+            <option value="plushPurple">Plush Purple</option>
+            <option value="coolCream">Cool Cream</option>
+            <option value="lovelyLilac">Lovely Lilac</option>
+          </select>
+        </div>
+
+        <h2>Multiple-selection menu:</h2>
+
+        <div data-role="fieldcontain">
+          <label for="multiSelect">Widget Color:</label>
+          <select name="multiSelect" id="multiSelect" data-native-menu="false" multiple>
+            <option value="">Select...</option>
+            <option value="rubyRed">Ruby Red</option>
+            <option value="plushPurple">Plush Purple</option>
+            <option value="coolCream">Cool Cream</option>
+            <option value="lovelyLilac">Lovely Lilac</option>
+          </select>
+        </div>
+
+        <h2>Option groups:</h2>
+
+        <div data-role="fieldcontain">
+          <label for="optionGroups">Widget Color:</label>
+          <select name="optionGroups" id="optionGroups" data-native-menu="false">
+            <optgroup label="Matte Colors">
+              <option value="rubyRed">Ruby Red</option>
+              <option value="plushPurple">Plush Purple</option>
+              <option value="coolCream">Cool Cream</option>
+            </optgroup>
+            <optgroup label="Glossy Colors">
+            <option value="lovelyLilac">Lovely Lilac</option>
+            <option value="boldBlack">Bold Black</option>
+            <option value="gloriousGreen">Glorious Green</option>
+            </optgroup>
+          </select>
+        </div>
+
+      </form>
+    </div>
+
+    <div data-role="footer">
+      <h4>Page Footer</h4>
+    </div>
+
+  </div>
+
+</body>
+</html>
+

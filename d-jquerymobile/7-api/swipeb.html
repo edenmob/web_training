@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery Mobile: Remote autocomplete</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+  <style type="text/css">
+  div.box {
+    background-color: #108040;
+    height: 3em;
+    width: 30em;
+  }
+  div.box.swipe {
+    background-color: #B24926;
+  }
+  </style>
+  <script>
+  $(function(){
+  // Bind the swipeHandler callback function to the swipe event on div.box
+  $('div.box').on( 'swipe', swipeHandler );
+  
+  // Callback function references the event target and adds the 'swipe' class to it
+  function swipeHandler( event ){
+    $(event.target).addClass( 'swipe' );
+  }
+});
+  </script>
+</head> 
+<body>
+
+  <div class="box"></div>
+
+
+</body>
+</html>
+
+
