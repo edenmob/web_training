@@ -15,15 +15,20 @@
       value = $input.val(),
       html = "";
       $ul.html( "" );
+
+      /* URL Geobytes : http://www.geobytes.com/ */
       if ( value && value.length > 2 ) {
         $ul.html( "<li><div class='ui-loader'><span class='ui-icon ui-icon-loading'></span></div></li>" );
+        // On force la maj visuelle
         $ul.listview( "refresh" );
+        // jSonP via la méthode ajax
         $.ajax({
           url: "http://gd.geobytes.com/AutoCompleteCity",
           dataType: "jsonp",
           crossDomain: true,
           data: {
-            q: $input.val()
+            q: $input.val(),
+            filter:'FR'
           }
         })
         .then( function ( response ) {
