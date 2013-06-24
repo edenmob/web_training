@@ -8,20 +8,23 @@
 
 	<h1>Something to Save</h1>
 	<form action="#">
-		<textarea name="content" id="content" cols="30" rows="10"></textarea>
+		<textarea name="content" id="content" cols="30" rows="10"></textarea>		
 		<p><button type="submit">Save</button></p>
 	</form>
+</br>
+<textarea name="content2" id="content2" cols="30" rows="10"></textarea>
 
-	<div id="container"></div>
+<div id="container"></div>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-	<script>
+<script>
 
 	// 1. poster les données du champ content du formulaire vers le serveur (save.php)
 	// 2. récupérer les données (via post : load.php) et les afficher dans le champ content lors du chargement
 	// 3. récupérer le contenu du fichier load.json
 	// 4. intégrer le contenu de load.html dans #container
+	// 5. Récupérer des données en XML
 
 	// Ecoute le click (transmission du formulaire) pour poster vers le serveur
 	$('form').on('submit', function(e) {
@@ -43,13 +46,28 @@
 	$.getJSON('load.json', function(data){
 		if(data)
 		{
-			$("#content").val(data.content);
+			$("#content2").val(data.content);
 		}
 	});
 
 	// chargement de données html
 	$("#container").load("load.html");
 	// possibilité de faire $('#result').load('ajax/test.html #container');
+
+	// Chargement de données en Xml
+	jQuery.ajax({
+		type: "POST",
+		// Service .asmx (ex : http://manga.com/Services/Manga.asmx/GetProducts)
+		url: "data.xml",
+		dataType: "xml",
+		data: "{}",
+		contentType: "application/xml; charset=utf-8",
+		success: function(data) {
+			console.log(data);
+			edata = $(data).find("string").text();
+			alert(edata);
+		}
+	})
 
 	</script>
 

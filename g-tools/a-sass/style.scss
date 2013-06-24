@@ -154,7 +154,7 @@ a {
 
 
 /***********/
-/* style.scss */
+/* style.scss : Interpolation */
 
 $vert: top;
 $horz: left;
@@ -168,10 +168,10 @@ $radius: 10px;
 
 /* style.css */
 
-.rounded-top-left {
+/*.rounded-top-left {
   border-top-radius: 10px;
   -moz-border-radius-top: 10px;
-  -webkit-border-top-radius: 10px; }
+  -webkit-border-top-radius: 10px; }*/
 
 /***************/
 /* style.scss : Mixins*/

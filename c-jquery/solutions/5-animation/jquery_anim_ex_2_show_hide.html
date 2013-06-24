@@ -41,13 +41,16 @@
       // Rendre monDiv visible lors du click sur le bouton #show
       // Rendre monDiv invisible lors du click sur le bouton #hide (en 3 secondes)
       // Cacher/afficher en fonction de l'état lors du click sur #toggle
-      // Modifir les options de vitesse pour constater la différence
+      // Modifier les options de vitesse pour constater la différence
 
       $("#show").click(function() {
         $("#monDiv").show("normal");
       });
       $("#hide").click(function() {
         $("#monDiv").hide(3000);
+      });
+      $("#toggle").click(function() {
+        $("#monDiv").toggle("fast");
       });
 
     })

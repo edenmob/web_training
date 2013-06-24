@@ -8,7 +8,7 @@
 
 	<div id="images"></div>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
 
 	<script>
 
@@ -19,15 +19,15 @@
 	
 	$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
 	{
-		tags: "forest",
+		tags: "lion",
 		tagmode: "any",
 		format: "json"
 	},
 	function(data) {
-		$.each(data.items, function(i,item){
-			$("<img/>").attr("src", item.media.m).appendTo("#images");
-			if ( i == 5 ) return false;
-		});
+		// Utiliser $.each pour boucler sur les data.items
+		// pour chaque item, créer une balise img avec son src valant item.media.m
+		// et l'ajouter à #images
+		// Penser à la condition d'arrêt de la boucle ...
 	});
 
 	$.getJSON("http://api.flickr.com/services/feeds/photos_faves.gne?jsoncallback=?",
@@ -36,16 +36,10 @@
 		format: "json"
 	},
 	function(data) {
-		$.each(data.items, function(i,item){
-			$("<img/>").attr("src", item.media.m).appendTo("#images");
-			if ( i == 5 ) return false;
-		});
+		// Même chose que plus haut
 	});
 
 	</script>
 
 </body>
 </html>
-
-
-
