@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery Mobile silentScroll Method</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+  <script>
+
+    $(document).on( "mobileinit", function() {
+
+      $(document).on( "scrollstart", function() {
+        console.log( "Scrolling started: Y position = " + $(this).scrollTop() + " pixels" );
+      } );
+
+      $(document).on( "scrollstop", function() {
+        console.log( "Scrolling finished: Y position = " + $(this).scrollTop() + " pixels" );
+      } );
+
+      $(document).on( 'click', '#scrollDown', function() { window.scrollTo( 0, 300 ) } );
+      $(document).on( 'click', '#scrollDownSilently', function() { $.mobile.silentScroll( 300 ) } );
+
+    } );
+
+  </script>
+  <script type="text/javascript" src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+</head> 
+<body>
+
+  <div data-role="page" id="home">
+
+    <div data-role="header">
+      <h1>jQuery Mobile silentScroll Method</h1>
+    </div>
+
+    <div data-role="content">
+
+      <h2>silentScroll Method</h2>
+
+      <p><a id="scrollDown" href="#">Scroll Down</a></p>
+      <p><a id="scrollDownSilently" href="#">Scroll Down (Silently)</a></p>
+      
+      <p style="height: 1000px;">Sed ut perspiciatis unde omnis iste natus.</p>
+        
+    </div>
+
+  </div>
+
+</body>
+</html>
+

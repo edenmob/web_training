@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery Mobile: The Order of Page Events</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+  <script>
+
+    $( function() {
+
+      $(document).on( 'pagebeforeload', function(event,data) {
+        console.log( "pagebeforeload "+event );
+        console.log(data);
+      } );
+
+      $(document).on( 'pageload', function(event,data) {
+        console.log( "pageload "+event );
+        console.log(data);
+      } );
+
+      $(document).on( 'pagebeforechange', function(event) {
+        console.log( "pagebeforechange "+event );
+//        e.preventDefault();
+      } );
+
+      $(document).on( 'pagechange',  function(event) {
+        console.log( "pagechange "+event );
+      } );
+
+      $(document).on( 'pagebeforecreate', function(event) {
+        console.log( "pagebeforecreate "+event );
+      } );
+
+      $(document).on( 'pagecreate',  function(event) {
+        console.log( "pagecreate "+event );
+      } );
+
+      $(document).on( 'pageinit',  function(event) {
+        console.log( "pageinit "+event );
+      } );
+
+      $(document).on( 'pagebeforeshow', function(event) {
+        console.log( "pagebeforeshow "+event );
+      } );
+
+      $(document).on( 'pageshow',  function(event) {
+        console.log( "pageshow "+event );
+      } );
+
+      $(document).on( 'pagebeforehide', '#secondPage', function(event) {
+        console.log( "pagebeforehide "+event );
+      } );
+
+      $(document).on( 'pagehide', '#secondPage', function(event) {
+        console.log( "pagehide "+event );
+      } );
+
+      $(document).on( 'pageremove',  function(event) {
+        console.log( "pageremove "+event );
+      } );
+
+    } );
+  </script>
+
+  <script type="text/javascript" src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+</head> 
+<body>
+
+  <div data-role="page" id="firstPage">
+
+    <a href="second.html" data-role="button" onclick="console.log('Loading second page...')">Load Second Page</a>
+
+  </div>
+
+</body>
+</html>

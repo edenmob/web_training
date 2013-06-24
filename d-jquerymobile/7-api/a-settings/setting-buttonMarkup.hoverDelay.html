@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery Mobile: The hoverDelay Setting</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+  <script>
+
+    $(document).on( "mobileinit", function() {
+      $.mobile.buttonMarkup.hoverDelay = 5;
+    } );
+      
+  </script>
+
+  <script type="text/javascript" src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+</head> 
+<body>
+
+  <div data-role="page" id="home">
+
+    <div data-role="header">
+      <h1>My Page</h1>
+    </div>
+
+    <div data-role="content">
+      <p>On this page, $.mobile.buttonMarkup.hoverDelay is set to 5ms instead of the default of 200ms.</p>
+      <p>Try tapping, and then dragging on, this button on a touch device:</p>
+      <p><button>A Button</button></p>
+      <p>Notice that the button's "down" state appears more quickly than usual when tapped, but that it also appears for a moment when dragging on the button.</p>
+    </div>
+
+    <div data-role="footer">
+      <h4>Page Footer</h4>
+    </div>
+
+  </div>
+
+</body>
+</html>
+
+

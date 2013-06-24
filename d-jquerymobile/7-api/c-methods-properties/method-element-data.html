@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery Mobile: Working with Element Data</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+  <script>
+
+    $(document).on( 'mobileinit', function() {
+      $.mobile.ns = "mynamespace-";
+    } );
+      
+    $(document).on( 'click', '#showRole', function() {
+      alert( $('#home').data('role'));              // Displays "undefined"
+      alert( $('#home').data('mynamespace-role'));  // Displays "page"
+      // jqmData prend en compte le namespace
+      alert( $('#home').jqmData('role'));           // Displays "page"
+    } );
+
+  </script>
+
+  <script type="text/javascript" src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+</head> 
+<body>
+
+  <div data-mynamespace-role="page" id="home">
+
+    <div data-mynamespace-role="header">
+      <h1>jQuery Mobile: Working with Element Data</h1>
+    </div>
+
+    <div data-mynamespace-role="content">
+      <p><a id="showRole" href="#">Show #home's role</a></p>
+    </div>
+
+    <div data-mynamespace-role="footer">
+      <h4>Page Footer</h4>
+    </div>
+
+  </div>
+
+</body>
+</html>

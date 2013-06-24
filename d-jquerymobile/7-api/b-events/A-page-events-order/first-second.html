@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery Mobile: The Order of Page Events</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  
+  <script>
+
+  $(document).on("mobileinit", function(){
+      console.log( "mobileinit" );
+  });
+
+  $( function() {
+
+    $( document ).on( "pagebeforeload", function( event, data ){
+     console.log( "pagebeforeload "+event );
+   });
+
+    $(document).on( 'pageload', function(event) {
+      console.log( "pageload "+event );
+    } );
+
+    $(document).on( 'pagebeforechange', function(event,data) {
+      console.log( "pagebeforechange "+event );
+      console.log(data);
+    } );
+
+    $(document).on( 'pagechange',  function(event) {
+      console.log( "pagechange "+event );
+    } );
+
+    $(document).on( 'pagebeforecreate', function(event) {
+      console.log( "pagebeforecreate "+event );
+    } );
+
+    $(document).on( 'pagecreate',  function(event) {
+      console.log( "pagecreate "+event );
+    } );
+
+    $(document).on( 'pageinit',  function(event) {
+      console.log( "pageinit "+event );
+    } );
+
+    $(document).on( 'pagebeforeshow', function(event) {
+      console.log( "pagebeforeshow "+event );
+    } );
+
+    $(document).on( 'pageshow',  function(event) {
+      console.log( "pageshow "+event );
+    } );
+
+    $(document).on( 'pagebeforehide', '#secondPage', function(event) {
+      console.log( "pagebeforehide "+event );
+    } );
+
+    $(document).on( 'pagehide', '#secondPage', function(event) {
+      console.log( "pagehide "+event );
+    } );
+
+    $(document).on( 'pageremove',  function(event) {
+      console.log( "pageremove "+event );
+    } );
+
+  } );
+</script>
+
+<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+
+</head> 
+<body>
+
+  <div data-role="page" id="firstPage" data-dom-cache="true">
+
+
+    <div data-role="content">
+      <a href="#secondPage" data-role="button" onclick="console.log('Loading second page...')">Load Second Page</a>
+    </div>
+    
+
+  </div>
+
+  <div data-role="page" id="secondPage">
+
+    <div data-role="header">
+      <h1>Second Page</h1>
+    </div>
+
+    <div data-role="content">
+
+      <h1>Back to first Page</h1>
+      <a href="#firstPage" data-role="button" onclick="console.log('(Re)Loading first page...')">(Re)Load First Page</a>
+
+    </div>
+
+    <div data-role="footer">
+      <h4>Page Footer</h4>
+    </div>
+
+  </div>
+
+</body>
+</html>

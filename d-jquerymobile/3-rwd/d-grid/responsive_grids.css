@@ -14,6 +14,7 @@
     width: 100%;
     float: none;
 }
+
 /* 1st breakpoint - Float B and C, leave A full width on top */
 @media all and (min-width: 42em){
     .rwd-example div {
@@ -50,10 +51,11 @@
     .rwd-example {
       font-size:125%;
     }
-    .rwd-example .ui-block-a/*,
+    .rwd-example .ui-block-a,
     .rwd-example .ui-block-c */{
       float:left;
       width: 49.95%;
+      background-color: red;
     }
     .rwd-example .ui-block-b,
     .rwd-example .ui-block-c {

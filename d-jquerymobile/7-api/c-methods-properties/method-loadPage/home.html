@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery Mobile loadPage() Method</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+  <script>
+
+    var storePageLoaded = false;
+
+    $(document).on( 'click', '#preloadStore', function() {
+
+      // Preload the store.html page.
+      $.mobile.loadPage( 'store.html' )
+        .done( function( absUrl, options, page, dupCachedPage ) {
+          alert( "Store page loaded. Full URL: " + absUrl );
+          storePageLoaded = true;
+        } )
+        .fail( function( absUrl, options ) {
+          alert( "Couldn't load page: " + absUrl );
+        } );
+
+    } );
+
+    $(document).on( 'click', '#visitStore', function() {
+
+      // Change to the store.html page, if loaded.
+      if ( storePageLoaded ) {
+        $.mobile.changePage( "store.html", { transition: "pop" } );
+      } else {
+        alert( "Page not loaded: Please try again." );
+      }
+
+    } );
+
+  </script>
+
+  <script type="text/javascript" src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+</head> 
+<body>
+
+  <div data-role="page" id="home">
+
+    <div data-role="header">
+      <h1>jQuery Mobile loadPage() Method</h1>
+    </div>
+
+    <div data-role="content">
+      <h2>Home Page</h2>
+      <p><a id="preloadStore" href="#">Preload the Store Page</a></p>
+      <p><a id="visitStore" href="#">Visit the Store Page</a></p>
+    </div>
+
+  </div>
+
+</body>
+</html>

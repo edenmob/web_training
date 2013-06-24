@@ -9,8 +9,16 @@
   ul li {color:blue;}
   .colored {color:red;}
   </style>
+  <script src="../../a-common/js/jquery-1.9.1.min.js"></script>
+  <script>
+  /* Retirer le ready et déplacer ce code en haut pour constater le non chargement du DOM */
+  $(document).ready(function(){
+    $('ul li').addClass('colored');
+  });
+</script>
 </head>
 <body>
+
 
   <ul>
     <li>Element 1</li>
@@ -18,12 +26,6 @@
     <li>Element 3</li>
   </ul>
 
-  <script src="../../a-common/js/jquery-1.9.1.min.js"></script>
-  <script>
-  /* Retirer le ready et déplacer ce code en haut pour constater le non chargement du DOM */
-  //$(document).ready(function(){
-    $('ul li').addClass('colored');
-  //});
-  </script>
+  
 </body>
 </html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery Mobile: Triggering the Loading Message</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+  <script>
+    $(document).on( 'click', '#default', function() { $.mobile.loading( 'show' ) } );
+    $(document).on( 'click', '#textonly', function() { $.mobile.loading( 'show', { text: "Custom Text", textonly: true, textVisible: true } ) } );
+    $(document).on( 'click', '#spinnerAndText', function() { $.mobile.loading( 'show', { text: "Custom Text", textVisible: true } ) } );
+    $(document).on( 'click', '#themeE', function() { $.mobile.loading( 'show', { text: "Custom Text", textVisible: true, theme: 'e' } ) } );
+    $(document).on( 'click', '#hideLoadingMessage', function() { $.mobile.loading( 'hide' ) } );
+  </script>
+
+  <script type="text/javascript" src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+</head> 
+<body>
+
+  <div data-role="page" id="home">
+
+    <div data-role="header">
+      <h1>jQuery Mobile: Triggering the Loading Message</h1>
+    </div>
+
+    <div data-role="content">
+      <p><a id="default" data-role="button" href="#">Default Loading Message</a></p>
+      <p><a id="textonly" data-role="button" href="#">Text-Only Loading Message</a></p>
+      <p><a id="spinnerAndText" data-role="button" href="#">Spinner and Text</a></p>
+      <p><a id="themeE" data-role="button" href="#">Spinner and Text with 'e' Swatch</a></p>
+      <p><a id="hideLoadingMessage" data-role="button" href="#">Hide Loading Message</a></p>
+    </div>
+
+  </div>
+
+</body>
+</html>

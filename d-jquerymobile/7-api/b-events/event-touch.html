@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery Mobile Touch Events</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+  <script>
+    $(document).on( 'pageinit', '#myPage', function() {
+      $('#myDiv').tap( function() { console.log( "You tapped" ); } );
+      $('#myDiv').taphold( function() { console.log( "You tapped and held" ); } );
+      $('#myDiv').swipe( function() { console.log( "You swiped" ); } );
+      $('#myDiv').swipeleft( function() { console.log( "You swiped left" ); } );
+      $('#myDiv').swiperight( function() { console.log( "You swiped right" ); } );
+      $('#myDiv').click( function() { console.log( "You clicked (click)" ); } );
+      $('#myDiv').on( 'vclick', function() { console.log( "You clicked (vclick)" ); } );
+    } );
+  </script>
+
+  <script type="text/javascript" src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+</head> 
+<body>
+
+  <div data-role="page" id="myPage">
+
+    <div data-role="header">
+      <h1>jQuery Mobile Touch Events</h1>
+    </div>
+
+    <div data-role="content">
+      <div id="myDiv" style="background: #afa; text-align: center; padding: 100px 50px;">Tap, tap-and-hold, or swipe me!</div>
+    </div>
+
+    <div data-role="footer">
+      <h4>Page Footer</h4>
+    </div>
+
+  </div>
+
+</body>
+</html>

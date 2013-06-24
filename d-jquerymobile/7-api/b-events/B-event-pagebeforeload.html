@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery Mobile: Using the pagebeforeload Event</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+  <script>
+    $( function() {
+
+      $(document).on( 'pagebeforeload', function( event, data ) {
+        alert( "pagebeforeload triggered: attempting to load " + data.url );
+        event.preventDefault();
+
+        if ( confirm( "Load the page?" ) ) {
+          var secondPageMarkup =  '<div data-role="page" id="secondPage">';
+          secondPageMarkup += '<div data-role="content"><h1>Second Page</h1></div>';
+          var secondPage = $('body').append( secondPageMarkup );
+          var secondPage = $('#secondPage');
+          data.options.dataUrl = "secondPage.html";
+          data.deferred.resolve( data.absUrl, data.options, secondPage );
+        } else {
+          data.deferred.reject( data.absUrl, data.options );
+        }
+
+      } );
+    } );
+  </script>
+  <script type="text/javascript" src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+</head> 
+<body>
+
+  <div data-role="page" id="myPage">
+
+    <div data-role="header">
+      <h1>jQuery Mobile: Using the pagebeforeload Event</h1>
+    </div>
+
+    <div data-role="content">
+      <a href="secondPage.html" data-role="button">Second Page</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
