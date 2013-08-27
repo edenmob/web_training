@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre de ma page HTML5</title>
+  <meta name="description" content="Mon super site HTML5">
+  <meta name="author" content="Moi">
+  <style>
+  .a { color: blue; }
+  .b { color: purple; }
+  .c { border: 1px solid red;}
+  </style>
+</head>
+<body>
+  <ul id="list1">
+    <li class="a">item 1</li>
+    <li class="a">item 2</li>
+    <li class="b">item 3</li>
+    <li class="b">item 4</li>
+  </ul>
+  <p class="a">This is paragraph 1</p>
+  <p id="para2">This is paragraph 2</p>
+  <p class="b">This is paragraph 3</p>
+  <p id="para4" lang="en-us">This is paragraph 4</p>
+
+
+  <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+  <script src="../../../a-common/js/jquery-1.9.1.min.js"></script>
+  <script>
+
+  $(document).ready(function(){
+    // Les p qui contienent la chaine '3'
+    //$("p:contains('3')").addClass('c');
+    // Les p qui sont parent (ont au moins un enfant)
+    //$("p:parent").addClass('c');
+    // ul qui a un li de classe égal à a
+    //$("ul:has(li[class=a])").addClass('c');
+    // Le 3ème enfant li d'un ul
+    //$("ul li:nth-child(3)").addClass('c');
+    // Tous les 2n ème enfant li d'un ul
+    //$("ul li:nth-child(2n)").addClass('c');
+  })
+
+  </script>
+</body>
+</html>

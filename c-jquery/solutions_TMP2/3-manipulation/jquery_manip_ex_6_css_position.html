@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre de ma page HTML5</title>
+  <meta name="description" content="Mon super site HTML5">
+  <meta name="author" content="Moi">
+  <style>
+        div#box {
+            width: 250px;
+            height: 180px;
+            margin: 10px;
+            padding: 20px;
+            background: purple;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+        p, span {
+            font-size: 16pt;
+        }
+  </style>
+</head>
+<body>
+  <p>
+    Récupération des informations de tailles, offset, position ...</p>
+    <div id="box">
+    </div>
+    <div><span>Height: </span><span id="height"></span></div>
+    <div><span>Width: </span><span id="width"></span></div>
+    <div><span>innerHeight: </span><span id="innerHeight"></span></div>
+    <div><span>innerWidth: </span><span id="innerWidth"></span></div>
+    <div><span>outerHeight: </span><span id="outerHeight"></span></div>
+    <div><span>outerWidth: </span><span id="outerWidth"></span></div>
+    <div><span>offset (box): </span><span id="offset"></span></div>
+    <div><span>position: </span><span id="position"></span></div>
+    <div><span>offset (p): </span><span id="offsetp"></span></div>
+    <div><span>position (p): </span><span id="positionp"></span></div>
+
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+    <script src="../../../a-common/js/jquery-1.9.1.min.js"></script>
+    <script>
+
+    $(document).ready(function(){
+      /* Alimenter les span ci dessus avec les informations concernant le div #box */
+      /*$("#height").text($("#box").height());
+      $("#width").text($("#box").width());
+      // Padding inclus
+      $("#innerHeight").text($("#box").innerHeight());
+      $("#innerWidth").text($("#box").innerWidth());
+      // Padding + margin + border
+      $("#outerHeight").text($("#box").outerHeight());
+      $("#outerWidth").text($("#box").outerWidth());
+
+      $("#offset").text($("#box").offset().top + ", " + $("#box").offset().left);
+      $("#position").text($("#box").position().top + ", " + $("#box").position().left);
+
+      $("#offsetp").text($("p").offset().top + ", " + $("p").offset().left);
+      $("#positionp").text($("p").position().top + ", " + $("p").position().left);*/
+    })
+
+    </script>
+  </body>
+  </html>

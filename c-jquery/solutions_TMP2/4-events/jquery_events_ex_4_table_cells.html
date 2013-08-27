@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre de ma page HTML5</title>
+  <meta name="description" content="Mon super site HTML5">
+  <meta name="author" content="Moi">
+  <style>
+  th,td {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #000000;
+  }
+  tr {
+    border: 1px solid gray;
+  }
+  td {
+    width:200px;
+    padding:3px;
+  }
+  th {
+    background-color:#D2E0E8;
+    color:#003366
+  }
+  table {
+    border: 1pt solid gray;
+  }
+  .clickable {
+    cursor:pointer;
+  }
+  .stripe1 {
+    background-color:#ccc;
+  }
+  .stripe2 {
+    background-color:white;
+  }
+  .highlight {
+    background-color: #ffcc00;
+    font-weight:bold;
+  }
+  </style>
+</head>
+<body>
+  <h1>Tableau zebra</h1>
+  <table id="theList">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Milk</td>
+        <td>1.99</td>
+      </tr>
+      <tr>
+        <td>Eggs</td>
+        <td>2.29</td>
+      </tr>
+      <tr>
+        <td>Butter</td>
+        <td>3.49</td>
+      </tr>
+      <tr>
+        <td>Bread</td>
+        <td>0.99</td>
+      </tr>
+      <tr>
+        <td>Pasta</td>
+        <td>1.19</td>
+      </tr>
+      <tr>
+        <td>Honey</td>
+        <td>4.39</td>
+      </tr>
+      <tr>
+        <td>Cookies</td>
+        <td>2.99</td>
+      </tr>
+      <tr>
+        <td>Apples</td>
+        <td>0.59</td>
+      </tr>
+      <tr>
+        <td>Sugar</td>
+        <td>1.78</td>
+      </tr>
+      <tr>
+        <td>Pepper</td>
+        <td>1.56</td>
+      </tr>
+    </tbody>
+
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+    <script src="../../../a-common/js/jquery-1.9.1.min.js"></script>
+    <script>
+
+    $(document).ready(function(){
+
+      // Appliquer un effet zebra (stripe1/stripe2) au tableau en utilisant la méthode filter
+
+      // Ajouter la classe stripe1 aux lignes paires en utilisant filter
+      //$("#theList tr:even").addClass("stripe1");
+      //$("#theList tr").filter(":even").addClass("stripe1");
+      // Ajouter la classe stripe2 aux lignes impaires en utilisant filter
+      //$("#theList tr").filter(":odd").addClass("stripe2");
+      //$("#theList tr:odd").addClass("stripe2");
+
+      // Ajouter un effet sur le hover (highlight) en utilisant la notation $(selector).hover(handlerIn, handlerOut)
+
+      /*$("#theList tr").hover(
+        function() {
+          $(this).toggleClass("highlight");
+        },
+        function() {
+          $(this).toggleClass("highlight");
+        }
+      );*/
+    })
+
+    </script>
+  </body>
+  </html>

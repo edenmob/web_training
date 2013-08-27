@@ -1,0 +1,111 @@
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
+  <meta charset="utf-8" />
+
+  <title>Le titre de ma page HTML5</title>
+  <meta name="description" content="Mon super site HTML5" />
+  <meta name="author" content="Moi" />
+  <style type="text/css">
+
+  .a { width: 600px;}
+  .b { width: 200px;}
+  .c { border: 1px solid red;}
+
+  </style>
+</head>
+
+<body>
+  <h1>Exemple de formulaire ...</h1>
+
+  <form action="" method="post">
+    <table class="a">
+      <tbody>
+        <tr>
+          <td class="b">Prenom</td>
+
+          <td><input id="FirstName" type="text" /></td>
+        </tr>
+
+        <tr>
+          <td class="b">Nom</td>
+
+          <td><input id="LastName" type="text" /></td>
+        </tr>
+
+        <tr>
+          <td class="b">Desactiv&#233;</td>
+
+          <td><input id="Text1" type="text" disabled="disabled" /></td>
+        </tr>
+
+        <tr>
+          <td class="b">Homme/Femme ?</td>
+
+          <td><input id="Male" type="radio" checked="checked" />M<input id="Female" type=
+            "radio" />F</td>
+          </tr>
+
+          <tr>
+            <td class="b">Que souhaitez-vous ?</td>
+
+            <td><input id="Checkbox1" type="checkbox" checked="checked" /><label for=
+              "Checkbox1">A</label><br />
+              <input id="Checkbox2" type="checkbox" /><label for="Checkbox1">B</label><br />
+              <input id="Checkbox3" type="checkbox" checked="checked" /><label for=
+              "Checkbox1">C</label><br />
+              <input id="Checkbox4" type="checkbox" /><label for="Checkbox1">D</label></td>
+            </tr>
+
+            <tr>
+              <td class="b">Commentaires:</td>
+
+              <td>
+                <textarea id="Comments" cols="40" name="S1" rows="5">
+                </textarea></td>
+              </tr>
+
+              <tr>
+                <td class="b">Un fichier</td>
+
+                <td><input id="File1" type="file" /></td>
+              </tr>
+
+              <tr>
+                <td class="b">&nbsp;</td>
+
+                <td>&nbsp;</td>
+              </tr>
+
+              <tr>
+                <td class="b">&nbsp;</td>
+
+                <td><input id="Submit1" type="submit" value="submit" /> <input id="Reset1"
+                  type="reset" value="reset" /></td>
+                </tr>
+              </tbody>
+            </table>
+            </form><script src="../../../a-common/js/jquery-1.9.1.min.js" type="text/javascript">
+            </script><script type="text/javascript">
+
+
+$(document).ready(function(){
+  $("document").ready(function() {
+    // tous les input
+    //$("form :input").addClass('c');
+    // tous les text
+    //$("form :text").addClass('c');
+    // tous les text activés
+    //$("form :text:enabled").addClass('c');
+    // tous les éléments cochés (les cacher via hide())
+    //$("form :checked").hide();
+    // toutes les checkbox cochées (les cacher via hide())
+    //$("form :checkbox:checked").hide();
+  });
+})
+
+
+  </script>
+</body>
+</html>
