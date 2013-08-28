@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 <head>
@@ -7,6 +8,24 @@
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+
+  <style>
+
+  /* To apply a preset breakpoint to stack grids below 35em (560px), add the .ui-responsive class to the grid container. */
+
+  /* stack all grids below 25em (400px) */
+  @media all and (max-width: 25em) {
+    .my-breakpoint .ui-block-a,
+    .my-breakpoint .ui-block-b,
+    .my-breakpoint .ui-block-c,
+    .my-breakpoint .ui-block-d,
+    .my-breakpoint .ui-block-e {
+      width: 100%;
+      float: none;
+    }
+  }
+
+  </style>
 </head> 
 <body>
 
@@ -39,7 +58,7 @@
         <div class="ui-block-d"><div class="ui-body ui-body-d">D</div></div>
       </div><!-- /grid-c -->
       <h3>Grid D (20/20/20/20/20)</h3>
-      <div class="ui-grid-d ui-responsive">
+      <div class="ui-grid-d my-breakpoint">
         <div class="ui-block-a"><div class="ui-body ui-body-d">A</div></div>
         <div class="ui-block-b"><div class="ui-body ui-body-d">B</div></div>
         <div class="ui-block-c"><div class="ui-body ui-body-d">C</div></div>

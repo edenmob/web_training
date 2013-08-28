@@ -1,3 +1,4 @@
+/* http://view.jquerymobile.com/1.3.2/dist/demos/widgets/grids/grid-custom.html */
 /* Stack all blocks to start */
 .rwd-example .ui-block-a, 
 .rwd-example .ui-block-b, 
@@ -6,30 +7,29 @@
   float:none; 
 }
 
-  
+
 /* 1st breakpoint - Float B and C, leave A full width on top */ 
 @media all and (min-width: 34em){
   .rwd-example div {
     min-height:12em;
-    }
+  }
   .rwd-example .ui-block-b, 
   .rwd-example .ui-block-c { 
     float:left; 
     width: 49.95%; 
-    }
-    .rwd-example .ui-block-b p, 
+  }
+  .rwd-example .ui-block-b p, 
   .rwd-example .ui-block-c p { 
     font-size:.8em;
-    }
+  }
 }
-  
+
 /* 2nd breakpoint - Float all, 50/25/25 */ 
 @media all and (min-width: 46em){
   .rwd-example div {
     min-height:17em;
-      }
-  .rwd-example .ui-block-a, 
-  .rwd-example .ui-block-c { 
+  }
+  .rwd-example .ui-block-a { 
     float:left; 
     width: 49.95%; 
   }
@@ -39,20 +39,19 @@
     width: 24.925%; 
   }
 }
-  
+
 /* 3rd breakpoint - Bump up font size at very wide screens */ 
 @media all and (min-width: 66em){
   .rwd-example {
-        font-size:125%;
-   }
-  .rwd-example .ui-block-a, 
-  .rwd-example .ui-block-c { 
-      float:left; 
-          width: 49.95%; 
+    font-size:125%;
+  }
+  .rwd-example .ui-block-a{ 
+    float:left; 
+    width: 49.95%; 
   }
   .rwd-example .ui-block-b, 
   .rwd-example .ui-block-c { 
-      float:left; 
-      width: 24.925%; 
+    float:left; 
+    width: 24.925%; 
   }
 }
