@@ -1,0 +1,14 @@
+<root>
+	<product>
+		<name>My Product</name>
+		<price>22.3</price>
+		<desc>My super product</desc>
+		<sku>12345</sku>
+	</product>
+	<product>
+		<name>My Product 2</name>
+		<price>44.6</price>
+		<desc>My super product 2</desc>
+		<sku>54321</sku>
+	</product>
+</root>

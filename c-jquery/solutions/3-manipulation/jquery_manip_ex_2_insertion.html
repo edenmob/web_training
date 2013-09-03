@@ -31,17 +31,17 @@
   $(document).ready(function(){
 
     // Ajouter du contenu à la fin de tous les paragraphes
-    //$("p").append(" avec cela en plus ...");
+    $("p").append(" avec cela en plus ...");
 
     // Ajouter du contenu au début de tous les paragraphes
-    //$("p").prepend("Bonjour, ");
+    $("p").prepend("Bonjour, ");
 
-    // Déplace le dernier paragraphe à la fin (après) du premier paragraphe
-    //$("p:last").appendTo("p:first");
-    //$("p").last().appendTo($("p").first());
+    // Déplace le dernier paragraphe à la fin (à l'intérieur) du premier paragraphe
+    $("p:last").appendTo("p:first");
+    $("p").last().appendTo($("p").first());
 
-    // Déplace le denier paragraphe au début (avant) du premier paragraphe
-    //$("p:last").prependTo("p:first");
+    // Déplace le denier paragraphe au début (à l'intérieur) du premier paragraphe
+    $("p:last").prependTo("p:first");
     $("p").last().prependTo($("p").first());
 
   })
