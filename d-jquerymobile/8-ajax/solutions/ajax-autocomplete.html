@@ -28,11 +28,13 @@
             q: $input.val()
           }
         })
-        .then( function ( response ) {
+        .success( function ( response ) {
           $.each( response, function ( i, val ) {
             html += "<li>" + val + "</li>";
           });
           $ul.html( html );
+          // Rafraichissement graphique de la liste
+          $("#autocomplete").listview('refresh');
         });
       }
     });

@@ -1,5 +1,8 @@
-/* http://view.jquerymobile.com/1.3.2/dist/demos/widgets/grids/grid-custom.html */
-/* Stack all blocks to start */
+/* 
+  Approche mobile First (min-width)
+  Par défaut, tous les blocs sont empilés
+  Attention à bien utiliser des em et non des px
+*/
 .rwd-example .ui-block-a, 
 .rwd-example .ui-block-b, 
 .rwd-example .ui-block-c { 
@@ -8,7 +11,13 @@
 }
 
 
-/* 1st breakpoint - Float B and C, leave A full width on top */ 
+/* 
+  1er breakpoint a 544px
+  Passer la police de B et C à 0.8em
+  Laissez A en 100% width au dessus et B et C en Float left sur en dessous
+    |A:100%     |
+    |B:50%|C:50%|
+*/ 
 @media all and (min-width: 34em){
   .rwd-example div {
     min-height:12em;
@@ -24,7 +33,11 @@
   }
 }
 
-/* 2nd breakpoint - Float all, 50/25/25 */ 
+/* 
+  2nd breakpoint a 736px
+  Tout en float left, A 50% de largeur et B et C 25% en largeur 
+    |A:50%|B:25%|C:25%|
+*/ 
 @media all and (min-width: 46em){
   .rwd-example div {
     min-height:17em;
@@ -40,18 +53,14 @@
   }
 }
 
-/* 3rd breakpoint - Bump up font size at very wide screens */ 
+/* 
+  3ème breakpoint a 1056px
+  Augmenter la taille de la police (la passer à 125%)
+  Même organisation du contenu que pour le second beakpoint
+    |A:50%|B:25%|C:25%|
+  */ 
 @media all and (min-width: 66em){
   .rwd-example {
     font-size:125%;
-  }
-  .rwd-example .ui-block-a{ 
-    float:left; 
-    width: 49.95%; 
-  }
-  .rwd-example .ui-block-b, 
-  .rwd-example .ui-block-c { 
-    float:left; 
-    width: 24.925%; 
   }
 }

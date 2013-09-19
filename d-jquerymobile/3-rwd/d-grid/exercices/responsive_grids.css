@@ -1,0 +1,38 @@
+/* 
+  Approche mobile First (min-width)
+  Par défaut, tous les blocs sont empilés
+  Attention à bien utiliser des em et non des px
+*/
+.rwd-example .ui-block-a, 
+.rwd-example .ui-block-b, 
+.rwd-example .ui-block-c { 
+  width: 100%; 
+  float:none; 
+}
+
+
+/*
+  TODO: 
+  1er breakpoint a 544px
+  Passer la police de B et C à 0.8em
+  Laissez A en 100% width au dessus et B et C en Float left sur en dessous
+    |A:100%     |
+    |B:50%|C:50%|
+*/ 
+
+
+/*
+  TODO:
+  2nd breakpoint a 736px
+  Tout en float left, A 50% de largeur et B et C 25% en largeur 
+    |A:50%|B:25%|C:25%|
+*/ 
+
+
+/*
+  TODO:
+  3ème breakpoint a 1056px
+  Augmenter la taille de la police (la passer à 125%)
+  Même organisation du contenu que pour le second beakpoint
+    |A:50%|B:25%|C:25%|
+*/
