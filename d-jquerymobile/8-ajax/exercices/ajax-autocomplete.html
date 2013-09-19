@@ -18,23 +18,22 @@
 
       /* URL Geobytes : http://www.geobytes.com/ */
       if ( value && value.length > 2 ) {
-        /*$ul.html( "<li><div class='ui-loader'><span class='ui-icon ui-icon-loading'></span></div></li>" );*/
-        // jSonP via la méthode ajax
-        $.ajax({
-          url: "http://gd.geobytes.com/AutoCompleteCity",
-          dataType: "jsonp",
-          crossDomain: true,
-          data: {
-            q: $input.val()
-          }
-        })
-        .success( function ( response ) {
-          $.each( response, function ( i, val ) {
-            html += "<li>" + val + "</li>";
-          });
-          $ul.html( html );
-          // TODO: Rafraichissement graphique de la liste          
-        });
+        /*
+          $ul.html( "<li><div class='ui-loader'><span class='ui-icon ui-icon-loading'></span></div></li>" );
+        */
+
+        // 1. Utiliser $.ajax pour récupérer la liste des villes filtrées :
+        // url: "http://gd.geobytes.com/AutoCompleteCity"
+        // dataType: "jsonp"
+        // crossDomain: true
+        // le paramètre data doit être alimenté comme ceci data:{q:VALEUR_SAISIE}        
+
+        // 2. Dans la méthode success (d'ajax), 
+        // boucler sur les résultats et les afficher
+        // dans la liste
+
+        // 3. N'oubliez pas de rafraichir la liste graphiquement
+        
       }
     });
   });
