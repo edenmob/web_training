@@ -14,7 +14,7 @@
     $(document).on( 'click', '#preloadStore', function() {
 
       // Preload the store.html page.
-      $.mobile.loadPage( 'store.html' )
+      $.mobile.loadPage( 'store.html',{prefetch:"true"} )
         .done( function( absUrl, options, page, dupCachedPage ) {
           alert( "Store page loaded. Full URL: " + absUrl );
           storePageLoaded = true;

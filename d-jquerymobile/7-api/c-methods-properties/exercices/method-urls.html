@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery Mobile: URL Manipulation Methods</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script>
+
+    $(document).on( 'pageinit', '#home', function() {
+      var c = "";
+
+      c += '<h3>Parsing a URL:</h3><dl>';
+      var url = "http://user:pass@store.example.com:1234/cart/add.php?productId=321#top";
+      // Utiliser l'API $.mobile.path pour      
+      // 1. Parser l'url
+      var parts =  undefined;
+      c += '<dt>Full URL:</dt><dd>' + parts.href +'</dd>';
+      c += '<dt>Username/password/host/port:</dt><dd>' + parts.authority +'</dd>';
+      c += '<dt>Host and port:</dt><dd>' + parts.host +'</dd>';
+      c += '<dt>Directory portion:</dt><dd>' + parts.directory +'</dd>';
+      c += '<dt>Filename portion:</dt><dd>' + parts.filename +'</dd>';
+      c += '<dt>Query string:</dt><dd>' + parts.search +'</dd>';
+      c += '<dt>Fragment:</dt><dd>' + parts.hash +'</dd>';
+      c += '</dl>';
+
+      c += '<h3>Making an absolute URL from a relative URL:</h3>';
+      var relUrl = "../checkout/";
+      var absUrl = "http://store.example.com/cart/";
+      // 2. Mixer les 2 urls pour obtenir une URL absolue
+      var absoluteUrl = undefined;
+      c += 'Absolute URL: ' + absoluteUrl +'<br>';
+
+      c += '<h3>Checking if  2 URLs are in the same domain:</h3>';
+      var url1 = "http://www.example.com/about/";
+      var url2 = "http://www.example.com/contact/";
+      // 3. Tester si url1 et url2 sont dans le même domaine
+      var isSameDomain = undefined;
+      if ( isSameDomain ) c += 'Both URLs are in the same domain<br>';
+
+      $(":jqmData(role='content')").append( c );
+    } );
+
+  </script>
+  <script type="text/javascript" src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+</head> 
+<body>
+
+  <div data-role="page" id="home">
+
+    <div data-role="header">
+      <h1>jQuery Mobile: URL Manipulation Methods</h1>
+    </div>
+
+    <div data-role="content"></div>
+
+  </div>
+
+</body>
+</html>

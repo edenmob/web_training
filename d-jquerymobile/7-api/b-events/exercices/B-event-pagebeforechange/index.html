@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery Mobile: Working with the pagebeforechange Event</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+  <script>
+    $( function() {
+      // 0. Compléter pour avoir un écouteur sur l'évenement pagebeforechange
+      // Voir la documentation (http://api.jquerymobile.com/pagebeforechange/)
+      $(document).on(/* Compléter ici */ {        
+        if ( typeof data.toPage === "string" ) {
+          // 1. Parser l'url (elle se trouve dans data.toPage)
+          // Utiliser $.mobile.path.parseUrl
+          var parsedUrl = undefined;
+          // Evaluer valeur du hash (utiliser switch)
+          switch ( parsedUrl.hash ) {
+
+            // 2. Si le hash vaut #displayAlert
+            // Afficher une alert et arrêter le suivi du lien
+
+            // 3. Si le hash vaut #openAboutPage
+            // Naviguer vers aboutUs.html en mode dialog
+            
+
+            // 4. Si le hash vaut #productList
+            // Vider la liste de produits
+            // Ajouter des produits
+          }
+        }
+      } );
+    } );
+  </script>
+  <script type="text/javascript" src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+</head> 
+<body>
+
+  <div data-role="page" id="myPage">
+
+    <div data-role="header">
+      <h1>Working with the pagebeforechange Event</h1>
+    </div>
+
+    <div data-role="content">
+      <a href="#displayAlert" data-role="button">Display an alert</a>
+      <a href="#openAboutPage" data-role="button">Display a dialog</a>
+      <a href="#productList" data-role="button">Dynamic listview</a>
+    </div>
+
+  </div>
+
+  <div data-role="page" id="productList">
+
+    <div data-role="header">
+      <h1>Product List</h1>
+    </div>
+
+    <div data-role="content">
+      <ul data-role="listview" id="products">
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>

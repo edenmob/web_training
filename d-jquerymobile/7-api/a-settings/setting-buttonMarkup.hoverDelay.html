@@ -10,9 +10,12 @@
   <script>
 
     $(document).on( "mobileinit", function() {
-      $.mobile.buttonMarkup.hoverDelay = 5;
+      /*
+      Set the delay for touch devices to add the hover and down classes on touch interactions for buttons throughout the framework. Reducing the delay here results in a more responsive feeling ui, but will often result in the downstate being applied during page scrolling.
+      */
+      $.mobile.buttonMarkup.hoverDelay = 100;
     } );
-      
+
   </script>
 
   <script type="text/javascript" src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>

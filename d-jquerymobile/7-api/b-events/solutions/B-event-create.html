@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery Mobile create Event</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+  <script>
+
+    $( function() {
+
+      $('#addForm').on( 'tap', function() {
+
+        var f = '<form>';
+        f += '<div data-role="fieldcontain">';
+        f += '<label for="searchStore">Search the Store:</label>';
+        f += '<input type="search" name="searchStore" id="searchStore">';
+        f += '</div>';
+        f += '<div data-role="fieldcontain">';
+        f += '<fieldset data-role="controlgroup">';
+        f += '<legend>Widget Shape:</legend>';
+        f += '<input type="radio" name="widgetShape" id="widgetShape-round" value="round" checked>';
+        f += '<label for="widgetShape-round">Round</label>';
+        f += '<input type="radio" name="widgetShape" id="widgetShape-square" value="square">';
+        f += '<label for="widgetShape-square">Square</label>';
+        f += '</fieldset>';
+        f += '</div>';
+        f += '<input type="submit" name="placeOrder" value="Place Order">';
+        f += '</form>';
+        // Ajouter le formulaire f à #myPageContent
+        $(f).appendTo( "#myPageContent" );
+        // Que faut-il maintenant faire ?
+        $("#myPageContent").trigger( "create" );
+      } );
+    } );
+  </script>
+
+  <script type="text/javascript" src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+</head> 
+<body>
+
+  <div data-role="page" id="myPage">
+
+    <div data-role="header">
+      <h1>jQuery Mobile create Event</h1>
+    </div>
+
+    <div data-role="content" id="myPageContent">
+      <a id="addForm" href="#" data-role="button">Add Form</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

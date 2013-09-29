@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery Mobile changePage() Method</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+  <script>
+  
+  $(document).on( 'click', '#visitStore', function() {
+      // 1. Demander à l'utilisateur s'il veut aller sur #visitStore
+      // S'il confirme, naviguer via changePage avec une transition en pop
+    } );
+
+    $(document).on( 'click', '#viewStaffList', function() {
+      // 2. Créer dynamiquement une nouvelle page (data-role="page")
+
+      // 3. Naviguer vers cette page avec une transition en "flip"
+    } );
+
+    
+    $(document).on( 'submit', '#searchForm', function() {
+      if ( $("#searchQuery").val() ) {
+        // 4. Utiliser changePage pour soumettre un formulaire
+        // Appeler changePage avec les valeurs suivantes
+        // to: valeur de l'attribut action de #searchForm
+        // type: valeur de l'attribut method de #searchForm
+        // data: #searchQuery serialisé (serialize())
+      }
+
+      return false;
+    } );
+
+    </script>
+
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+  </head> 
+  <body>
+
+    <div data-role="page" id="home">
+
+      <div data-role="header">
+        <h1>jQuery Mobile changePage() Method</h1>
+      </div>
+
+      <div data-role="content">
+
+        <h2>Home Page</h2>
+        <p><a id="visitStore" href="#">Visit the Store Page</a></p>
+        <p><a id="viewStaffList" href="#">View Staff List</a></p>
+
+        <form id="searchForm" action="searchSite.php" method="get" data-ajax="false">
+          <div data-role="fieldcontain">
+            <label for="searchQuery">Search the Site:</label>
+            <input type="search" name="searchQuery" id="searchQuery">
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+
+    <div data-role="page" id="store">
+
+      <div data-role="header">
+        <h1>jQuery Mobile changePage() Method</h1>
+      </div>
+
+      <div data-role="content">
+
+        <h2>Store Page</h2>
+        <p><a href="#home">Home</a></p>
+
+      </div>
+
+    </div>
+
+  </body>
+  </html>

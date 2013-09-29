@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery Mobile refresh Method</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+  <script>
+
+      $(document).on( 'click', '#addListItem', function() {
+        $('#productList').append( '<li><a href="#">New Item</a></li>' );
+        // Que manque t-il ?
+      } );
+
+      $(document).on( 'click', '#toggleCheckbox', function() {
+        var isChecked = $('#carryCase').prop( 'checked');
+        $('#carryCase').prop( 'checked', !isChecked);
+        // Que manque t-il ?
+      } );
+
+      $(document).on( 'click', '#addMenuItem', function() {
+        $('#widgetColor').append( '<option value="newItem">New Item</option>' );
+        // Que manque t-il ?
+      } );
+
+      $(document).on( 'click', '#toggleButton', function() {
+        var isDisabled = $('#buyNow').prop( 'disabled');
+        $('#buyNow').prop( 'disabled', !isDisabled);
+        // Que manque t-il ?
+      } );
+
+  </script>
+
+  <script type="text/javascript" src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+</head> 
+<body>
+
+  <div data-role="page" id="myPage">
+
+    <div data-role="header">
+      <h1>jQuery Mobile refresh Method</h1>
+    </div>
+
+    <div data-role="content">
+
+      <ul id="productList" data-role="listview" data-inset="true">
+        <li><a href="#">SuperWidget</a></li>
+        <li><a href="#">MegaWidget</a></li>
+        <li><a href="#">WonderWidget</a></li>
+      </ul>
+
+      <button id="addListItem">Add a List Item</button>
+
+      <br /><hr />
+
+      <div data-role="fieldcontain">
+        <fieldset data-role="controlgroup">
+          <legend>Accessories:</legend>
+          <input name="carryCase" id="carryCase" type="checkbox" value="yes" />
+          <label for="carryCase">Carry Case</label>
+        </fieldset>
+      </div>
+            
+      <button id="toggleCheckbox">Toggle Checkbox</button>
+
+      <br /><hr />
+
+      <div data-role="fieldcontain">
+        <label for="widgetColor">Widget Color:</label>
+        <select name="widgetColor" id="widgetColor" data-native-menu="false">
+          <option value="rubyRed">Ruby Red</option>
+          <option value="plushPurple">Plush Purple</option>
+          <option value="coolCream">Cool Cream</option>
+        </select>
+      </div>
+
+      <button id="addMenuItem">Add a Select Menu Item</button>
+
+      <br /><hr />
+
+      <div data-role="fieldcontain">
+        <input name="buyNow" id="buyNow" type="submit" value="Buy Now" />
+      </div>
+            
+      <button id="toggleButton">Toggle Button</button>
+     
+    </div>
+
+    <div data-role="footer">
+      <h4>Page Footer</h4>
+    </div>
+
+  </div>
+
+</body>
+</html>

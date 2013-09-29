@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery Mobile: The jqmEnhanceable() and jqmHijackable() Methods</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+  <script>
+
+    $(document).on( 'mobileinit', function() {
+      // IMPORTANT
+      $.mobile.ignoreContentEnabled = true;
+    } );
+
+    $(document).on( 'pageshow', '#home', function() {
+      // Ouvrir la console pour observer ce qui se passe ?
+      var enhance = $('#enhance').jqmEnhanceable();
+      console.log( enhance );
+
+      var noEnhance = $('#no-enhance').jqmEnhanceable();
+      console.log( noEnhance );
+
+      var hijack = $('#hijack').jqmHijackable();
+      console.log( hijack );
+
+      var noHijack = $('#no-hijack').jqmHijackable();
+      console.log( noHijack );
+    } );
+
+  </script>
+
+  <script type="text/javascript" src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+</head> 
+<body>
+
+  <div data-role="page" id="home">
+
+    <div data-role="header">
+      <h1>jQuery Mobile: The jqmEnhanceable() and jqmHijackable() Methods</h1>
+    </div>
+
+    <div data-role="content">
+
+      <h2> The <code>jqmEnhanceable()</code> and <code>jqmHijackable()</code> Methods</h2>
+
+      <p>Check your debug console. You'll see that the elements with <code>data-enhance="false"</code> and <code>data-ajax="false"</code> have been removed from the element sets.</p>
+
+      <p id="enhance">Enhance me!</p>
+      <div data-enhance="false">
+        <p id="no-enhance">Don't enhance me!</p>
+      </div>
+
+      <a id="hijack" href="#">Hijack me!</a></p>
+      <div data-ajax="false">
+        <p><a id="no-hijack" href="#">Don't hijack me!</a></p>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</body>
+</html>
